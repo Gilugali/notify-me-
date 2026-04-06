@@ -1,0 +1,22 @@
+{
+  "name": "assignment-notifier-relay",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsc -w"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "nodemailer": "^6.9.14"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.0",
+    "@types/nodemailer": "^6.4.15",
+    "typescript": "^5.5.0"
+  }
+}

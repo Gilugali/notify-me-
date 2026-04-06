@@ -1,0 +1,13 @@
+{
+  "name": "assignment-notifier-extension",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc && node scripts/copy-static.mjs",
+    "watch": "tsc -w"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "typescript": "^5.5.0"
+  }
+}

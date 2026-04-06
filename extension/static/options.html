@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment Notifier — Options</title>
+    <style>
+      body { font-family: sans-serif; max-width: 480px; margin: 2rem auto; }
+      label { display: block; margin: 0.75rem 0 0.25rem; font-weight: 600; }
+      input { width: 100%; padding: 0.5rem; font-size: 0.95rem; }
+      button { margin-top: 1rem; padding: 0.5rem 1rem; }
+      #status { color: green; margin-left: 0.75rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Assignment Notifier</h1>
+    <form id="form">
+      <label>Canvas host<input name="canvasHost" required placeholder="canvas.myschool.edu" /></label>
+      <label>Refresh every (minutes)<input name="intervalMinutes" type="number" min="5" value="60" /></label>
+      <button type="submit">Save</button>
+      <span id="status"></span>
+    </form>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
