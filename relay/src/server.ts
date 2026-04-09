@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import rateLimit from "express-rate-limit";
 import nodemailer from "nodemailer";
 
@@ -18,7 +18,7 @@ if (!API_KEY || !MAIL_USER || !MAIL_PASS) {
 }
 
 const allowed = new Set(
-  ALLOWED_EMAILS.split(",").map((s) => s.trim().toLowerCase()).filter(Boolean)
+  ALLOWED_EMAILS.split(",").map((s: string) => s.trim().toLowerCase()).filter(Boolean)
 );
 
 const transporter = nodemailer.createTransport({
@@ -32,9 +32,9 @@ const app = express();
 app.use(express.json({ limit: "256kb" }));
 app.use(rateLimit({ windowMs: 60_000, max: 20 }));
 
-app.get("/health", (_req, res) => res.send("ok"));
+app.get("/health", (_req: Request, res: Response) => res.send("ok"));
 
-app.post("/send-assignment", async (req, res) => {
+app.post("/send-assignment", async (req: Request, res: Response) => {
   if (req.header("X-API-Key") !== API_KEY) return res.sendStatus(401);
 
   const { to, subject, html } = req.body ?? {};

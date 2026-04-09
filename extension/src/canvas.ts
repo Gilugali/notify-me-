@@ -29,6 +29,7 @@ export async function fetchCanvasAssignments(host: string): Promise<Assignment[]
       });
     }
   }
+  console.log("assignments: ", results)
   return results;
 }
 
